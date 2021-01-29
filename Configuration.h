@@ -21,7 +21,6 @@
  */
 #pragma once
 
-//#define SAPPHIRE_PLUS_MKS_UI
 //#define SAPPHIRE_PLUS_TMC_UART
 
 /**
@@ -73,7 +72,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(wjohnsaunders, SapphirePlus)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Adi146, SapphirePlus)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -1234,9 +1233,8 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
-#if DISABLED(SAPPHIRE_PLUS_MKS_UI)
-  #define FILAMENT_RUNOUT_SENSOR
-#endif
+
+#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
@@ -1456,10 +1454,8 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-#if DISABLED(SAPPHIRE_PLUS_MKS_UI)
-  #define LCD_BED_LEVELING
-#endif
 
+#define LCD_BED_LEVELING
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.02  // (mm) Step size while manually probing Z axis.
   #define LCD_PROBE_Z_RANGE 4     // (mm) Z Range centered on Z_MIN_POS for LCD Z adjustment
@@ -1600,9 +1596,7 @@
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
 #if ENABLED(EEPROM_SETTINGS)
-  #if ENABLED(SAPPHIRE_PLUS_MKS_UI)
-    #define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
-  #endif
+  //#define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
 #endif
 
 //
@@ -2430,11 +2424,8 @@
  *   root of your SD card, together with the compiled firmware.
  */
 //#define TFT_CLASSIC_UI
-#if DISABLED(SAPPHIRE_PLUS_MKS_UI)
-  #define TFT_COLOR_UI
-#else
-  #define TFT_LVGL_UI
-#endif
+#define TFT_COLOR_UI
+//#define TFT_LVGL_UI
 
 /**
  * TFT Rotation. Set to one of the following values:
@@ -2458,9 +2449,8 @@
 //
 // ADS7843/XPT2046 ADC Touchscreen such as ILI9341 2.8
 //
-#if DISABLED(SAPPHIRE_PLUS_MKS_UI)
-  #define TOUCH_SCREEN
-#endif
+
+#define TOUCH_SCREEN
 #if ENABLED(TOUCH_SCREEN)
   #define BUTTON_DELAY_EDIT  50 // (ms) Button repeat delay for edit screens
   #define BUTTON_DELAY_MENU 250 // (ms) Button repeat delay for menus
