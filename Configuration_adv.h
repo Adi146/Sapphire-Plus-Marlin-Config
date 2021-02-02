@@ -581,7 +581,7 @@
   //#define INVERT_Z3_VS_Z_DIR
   //#define INVERT_Z4_VS_Z_DIR
 
-  #define Z_MULTI_ENDSTOPS
+  //#define Z_MULTI_ENDSTOPS
   #if ENABLED(Z_MULTI_ENDSTOPS)
     #define Z2_USE_ENDSTOP          _ZMAX_
     #define Z2_ENDSTOP_ADJUSTMENT   0
@@ -747,7 +747,7 @@
  * Add the G34 command to align multiple Z steppers using a bed probe.
  */
 
-//#define Z_STEPPER_AUTO_ALIGN
+#define Z_STEPPER_AUTO_ALIGN
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
@@ -804,9 +804,7 @@
 //
 // Add the G35 command to read bed corners to help adjust screws. Requires a bed probe.
 //
-#if ENABLED(SAPPHIRE_PLUS_BLTOUCH)
-  #define ASSISTED_TRAMMING
-#endif
+//#define ASSISTED_TRAMMING
 #if ENABLED(ASSISTED_TRAMMING)
 
   // Define positions for probe points.
@@ -1095,10 +1093,10 @@
       //
 
       // Set a convenient position to do the calibration (probing point and nozzle/bed-distance)
-      //#define PROBE_OFFSET_WIZARD_XY_POS { X_CENTER, Y_CENTER }
+      #define PROBE_OFFSET_WIZARD_XY_POS { X_CENTER, Y_CENTER }
 
-    //#define PROBE_OFFSET_WIZARD_START_Z -2.0
-    //#define PROBE_OFFSET_WIZARD
+    #define PROBE_OFFSET_WIZARD_START_Z -2.0
+    #define PROBE_OFFSET_WIZARD
   #endif
 
   // Include a page of printer information in the LCD Main Menu
