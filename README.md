@@ -8,8 +8,9 @@ ATTENTION: My Printer is modified. This configuration will NOT work with the fac
 - BLTouch
 - Aluminium Extruder MK8
 - PEI coated Springsteel Buildplate
+- Direct Drive Extruder
+- Relay for auto power supply control
 
 ## Mods Todo:
 - TMC2209 for all Axis with Sensorless Homing
 - Inductive ABL probe
-- Direct Drive Extruder
